@@ -1,5 +1,10 @@
-import React from 'react';
-import { ChevronRightIcon, ShieldCheckIcon, CogIcon, ScaleIcon } from '@heroicons/react/24/solid';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ChevronRightIcon, ShieldCheckIcon, CogIcon, ScaleIcon, ArrowLeftIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
+
+// --- Import your local images for the slider ---
+import asbestosMachine1 from '../assets/images/r3.png'; // Replace with your actual image file
+// Replace with your actual image file
 
 // --- Reusable list item component ---
 const MachineItem = ({ name }) => (
@@ -30,13 +35,33 @@ const AsbestosMachines = () => {
     "HI-Consistency Pulpersr"
   ];
 
+  // --- Array for the new image slider ---
+  const galleryImages = [
+    { src: asbestosMachine1, alt: 'Sieve Cylinder with VAT for asbestos processing' },
+  ];
+
+  // --- State to track the current image index ---
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // --- Functions to handle slider navigation ---
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? galleryImages.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === galleryImages.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
   return (
     <div className="bg-gray-50">
       {/* --- Hero Section --- */}
       <section 
         className="relative py-28 px-4 bg-cover bg-center text-white flex items-center justify-center"
-        // IMPORTANT: Replace this URL with the actual image from your screenshot
-        style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.imgur.com/your-asbestos-machine-image.jpg')" }}
+        style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1554121048-5232582885a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')" }}
       >
         <div className="text-center z-10">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight uppercase text-shadow-lg">
@@ -47,6 +72,15 @@ const AsbestosMachines = () => {
 
       {/* --- Main Content Section --- */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+
+        {/* --- Back to Projects Link --- */}
+        <div className="mb-12">
+          <Link to="/projects" className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+            <ArrowLeftIcon className="h-5 w-5 mr-2" />
+            Back to Projects
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           
           {/* --- Left Title --- */}
@@ -65,6 +99,27 @@ const AsbestosMachines = () => {
               <p>
                 Abi Pulp and Paper Industries advanced Asbestos Mill Equipments maximise the performance of a production line, forming, pressing, drying and finishing section. Our equipments covers are based on state-of-the-art polymer and latest technologies that provide excellent wear resistance, stable roughness & hardness and durability in demanding operating environment enabling trouble-free run period.
               </p>
+            </div>
+
+            {/* --- Image Slider --- */}
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-xl mb-12">
+              <img 
+                src={galleryImages[currentIndex].src} 
+                alt={galleryImages[currentIndex].alt} 
+                className="w-full h-full object-cover"
+              />
+              <button 
+                onClick={goToPrevious} 
+                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60 transition"
+              >
+                <ChevronLeftIcon className="h-6 w-6" />
+              </button>
+              <button 
+                onClick={goToNext} 
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60 transition"
+              >
+                <ChevronRightIcon className="h-6 w-6" />
+              </button>
             </div>
             
             {/* --- Equipment List --- */}
@@ -97,15 +152,18 @@ const AsbestosMachines = () => {
       </section>
 
       {/* --- Call to Action Section --- */}
-      <section className="bg-slate-gray">
+      <section className="bg-slate-800">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between">
           <h2 className="text-3xl font-extrabold text-white text-center sm:text-left">
-            <span className="block">INTERESTED WITH THIS SERVICE.</span>
+            <span className="block">INTERESTED WITH THIS SERVICE?</span>
           </h2>
           <div className="mt-8 sm:mt-0 flex-shrink-0">
-            <button className="w-full inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-gray-900 bg-yellow-400 hover:bg-yellow-500 transition-transform transform hover:scale-105">
+            <Link 
+              to="/contact"
+              className="w-full inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-gray-900 bg-yellow-400 hover:bg-yellow-500 transition-transform transform hover:scale-105"
+            >
               GET A QUOTE
-            </button>
+            </Link>
           </div>
         </div>
       </section>

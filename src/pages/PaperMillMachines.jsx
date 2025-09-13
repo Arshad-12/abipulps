@@ -1,7 +1,13 @@
-import React from 'react';
-import { ChevronRightIcon, CogIcon, ShieldCheckIcon, CpuChipIcon } from '@heroicons/react/24/solid';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ChevronRightIcon, CogIcon, ShieldCheckIcon, CpuChipIcon, ArrowLeftIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 
-// --- Reusable list item component ---
+// --- Import your local images for the slider ---
+import paperMachine1 from '../assets/images/r3.png';
+
+
+
+// --- Reusable list item component (no changes) ---
 const MachineItem = ({ name }) => (
   <li className="flex items-center text-gray-700">
     <ChevronRightIcon className="h-5 w-5 text-yellow-500 mr-3 flex-shrink-0" />
@@ -9,7 +15,7 @@ const MachineItem = ({ name }) => (
   </li>
 );
 
-// --- Reusable feature card component ---
+// --- Reusable feature card component (no changes) ---
 const FeatureCard = ({ icon, title, children }) => (
   <div className="bg-white p-6 rounded-lg shadow-lg">
     <div className="flex items-center mb-4">
@@ -29,17 +35,34 @@ const PaperMillMachines = () => {
     "Dryer Imported", "Calender Section", "Pope Reeler", "Rewinder", "Drive Section", "Press Roller"
   ];
 
-  // Split the list for a two-column layout
+  const galleryImages = [
+    { src: paperMachine1, alt: 'State-of-the-art paper mill machine in operation' },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? galleryImages.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === galleryImages.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
   const midIndex = Math.ceil(machineList.length / 2);
   const firstColumn = machineList.slice(0, midIndex);
   const secondColumn = machineList.slice(midIndex);
 
   return (
     <div className="bg-gray-50">
-      {/* --- Hero Section --- */}
+      {/* --- HERO SECTION (UPDATED WITH UNSPLASH IMAGE) --- */}
       <section 
         className="relative py-24 px-4 bg-cover bg-center text-white flex items-center justify-center"
-        style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581092921447-4a1b3c2a4f88?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }} // Replace with a relevant, high-quality image of paper manufacturing
+        style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1629818823573-0427b363712c?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
       >
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight uppercase">
@@ -51,9 +74,18 @@ const PaperMillMachines = () => {
 
       {/* --- Main Content Section --- */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        
+        {/* --- Back to Projects Link (no changes) --- */}
+        <div className="mb-12">
+          <Link to="/projects" className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+            <ArrowLeftIcon className="h-5 w-5 mr-2" />
+            Back to Projects
+          </Link>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           
-          {/* --- Left Title --- */}
+          {/* --- Left Title (no changes) --- */}
           <aside className="lg:col-span-2">
             <div className="sticky top-28">
                <h2 className="text-2xl font-bold text-gray-900 flex items-center">
@@ -70,8 +102,29 @@ const PaperMillMachines = () => {
                 Abi Pulp and Paper Industries advanced Paper Mill Equipments maximise the performance of a production line, forming, pressing, drying and finishing section. Our equipments covers are based on state-of-the-art polymer and latest technologies that provide excellent wear resistance, stable roughness & hardness and durability in demanding operating environment enabling trouble-free run period.
               </p>
             </div>
+
+            {/* --- Image Slider (no changes) --- */}
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-xl mb-12">
+              <img 
+                src={galleryImages[currentIndex].src} 
+                alt={galleryImages[currentIndex].alt} 
+                className="w-full h-full object-cover"
+              />
+              <button 
+                onClick={goToPrevious} 
+                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60 transition"
+              >
+                <ChevronLeftIcon className="h-6 w-6" />
+              </button>
+              <button 
+                onClick={goToNext} 
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60 transition"
+              >
+                <ChevronRightIcon className="h-6 w-6" />
+              </button>
+            </div>
             
-            {/* --- Equipment List --- */}
+            {/* --- Equipment List (no changes) --- */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
               <ul className="space-y-3">
                 {firstColumn.map(item => <MachineItem key={item} name={item} />)}
@@ -84,7 +137,7 @@ const PaperMillMachines = () => {
         </div>
       </main>
       
-      {/* --- Features Section --- */}
+      {/* --- Features Section (no changes) --- */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -105,16 +158,19 @@ const PaperMillMachines = () => {
         </div>
       </section>
 
-      {/* --- Call to Action Section --- */}
-      <section className="bg-slate-gray"> {/* Using your custom color from tailwind.config.js */}
+      {/* --- Call to Action Section (no changes) --- */}
+      <section className="bg-slate-800">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between">
           <h2 className="text-3xl font-extrabold text-white text-center sm:text-left">
-            <span className="block">INTERESTED WITH THIS SERVICE.</span>
+            <span className="block">INTERESTED WITH THIS SERVICE?</span>
           </h2>
           <div className="mt-8 sm:mt-0 flex-shrink-0">
-            <button className="w-full inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-gray-900 bg-yellow-400 hover:bg-yellow-500 transition-transform transform hover:scale-105">
+            <Link 
+              to="/contact" 
+              className="w-full inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-gray-900 bg-yellow-400 hover:bg-yellow-500 transition-transform transform hover:scale-105"
+            >
               GET A QUOTE
-            </button>
+            </Link>
           </div>
         </div>
       </section>
