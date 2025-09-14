@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import image1 from '../assets/images/32022.jpg';
 
 // --- SVG Icon Components (no changes needed) ---
 const ArrowRightIcon = ({ className }) => <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>;
@@ -27,7 +28,7 @@ export default function Home() {
             High-performance pulp and paper equipment designed for maximum reliability and unparalleled excellence.
           </p>
           <div className="mt-10">
-            <Link to="/products" className="inline-block text-slate-900 bg-amber-400 font-bold py-4 px-10 rounded-lg text-lg hover:bg-amber-300 transition-all duration-300 shadow-lg transform hover:scale-105">
+            <Link to="/projects" className="inline-block text-slate-900 bg-amber-400 font-bold py-4 px-10 rounded-lg text-lg hover:bg-amber-300 transition-all duration-300 shadow-lg transform hover:scale-105">
               Explore Our Equipment
             </Link>
           </div>
@@ -56,7 +57,7 @@ export default function Home() {
               <div className="absolute -top-16 -left-16 w-72 h-72 bg-amber-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
               <div className="absolute -bottom-16 -right-16 w-72 h-72 bg-sky-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
               <div className="relative aspect-w-1 aspect-h-1">
-                <img src="https://images.unsplash.com/photo-1581092921447-4a0b3a3d5b8a?q=80&w=2070&auto-format=fit=crop" alt="Engineers inspecting machinery" className="w-full h-full object-cover rounded-2xl shadow-2xl" />
+                <img src ={image1} alt="Engineers inspecting machinery" className="w-full h-full object-cover rounded-2xl shadow-2xl" />
               </div>
             </div>
             <div>

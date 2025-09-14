@@ -45,7 +45,7 @@ export default function Contact() {
 
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Section (No Changes) */}
+      {/* Hero Section */}
       <div className="relative h-96">
         <img
           src="https://images.unsplash.com/photo-1621976392233-ea636a04fb1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
@@ -67,7 +67,7 @@ export default function Contact() {
       {/* Section 1: Form and Contact Details */}
       <div className="max-w-7xl mx-auto py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Column 1: Contact Form (No Changes) */}
+          {/* Column 1: Contact Form */}
           <div className="bg-gray-50 p-8 sm:p-12 rounded-2xl shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">Request a Consultation</h2>
             <p className="text-gray-600 mb-8">Fill out the form and our team will be in touch within 24 hours.</p>
@@ -111,7 +111,7 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* --- NEW & IMPROVED Direct Contact Section --- */}
+          {/* Direct Contact Section */}
           <div className="bg-gray-900 rounded-2xl shadow-lg p-8 sm:p-12 flex flex-col justify-center">
             <h3 className="text-3xl font-bold text-white">Direct Contact</h3>
             <p className="mt-3 text-gray-300">
@@ -124,8 +124,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xl font-semibold text-white">Phone</p>
-                  <a href="tel:+1234567890" className="text-lg text-gray-300 hover:text-amber-400 transition-colors">
-                    +1 (234) 567-890
+                  <a href="tel:+919600942102" className="text-lg text-gray-300 hover:text-amber-400 transition-colors">
+                    (+91) 96009 42102 <br/>
+                  </a>
+                   <a href="tel:+919345022800" className="text-lg text-gray-300 hover:text-amber-400 transition-colors">
+                    (+91) 93450 22800
                   </a>
                 </div>
               </div>
@@ -147,7 +150,7 @@ export default function Contact() {
                 <div>
                   <p className="text-xl font-semibold text-white">Address</p>
                   <p className="text-lg text-gray-300">
-                    123 Industrial Park, Paper Mill Lane, Cityville, 45678
+                    Plot No 35, SF No 144/1, Codissia Industrial Park Ltd, Kallapalayam, Coimbatore 641201. INDIA
                   </p>
                 </div>
               </div>
@@ -156,7 +159,7 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Section 2: Large Map (No Changes) */}
+      {/* Section 2: Large Map -- THIS SECTION IS NOW UPDATED */}
       <div className="max-w-7xl mx-auto pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-gray-900">Visit Our Headquarters</h2>
@@ -164,13 +167,13 @@ export default function Contact() {
         </div>
         <div className="h-96 sm:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.22588698182!2d-122.4194154846813!3d37.77492927975918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f95d1e43%3A0x1a7d6e7f8a7a8d8c!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.18948780024!2d77.07411587451931!3d10.949054555986804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba851d2be65774d%3A0xdd6e834b85a932fa!2sABI%20PULP%20AND%20PAPER%20EQUIPMENTS!5e0!3m2!1sen!2sca!4v1757817589089!5m2!1sen!2sca"
             className="w-full h-full"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Company Headquarters Location"
+            title="ABI PULP AND PAPER EQUIPMENTS Location"
           ></iframe>
         </div>
       </div>

@@ -1,32 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import PaperMillMachines from '../assets/images/1b.webp';
+import PaperMillMachines from '../assets/images/2a.jpg';
+import PulpMillMachines from '../assets/images/2b.jpg';
+import Rollers from '../assets/images/2c.jpg';
+
 
 const projects = [
   {
-    pillar: '01',
     name: 'Rubberizing Rollers',
     path: '/projects/rubberizing-rollers',
     description: 'Specialized rubberizing processes for industrial rollers, enhancing durability and performance.',
-    imageUrl: 'https://images.unsplash.com/photo-1599690933571-a773739839ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    imageUrl: Rollers,
   },
   {
-    pillar: '02',
     name: 'Pulp Mill Equipments',
     path: '/projects/pulp-mill-equipments',
     description: 'Engineering and manufacturing of high-efficiency equipment for modern pulp mills.',
-    imageUrl: 'https://images.unsplash.com/photo-1629818823573-0427b363712c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    imageUrl: PulpMillMachines,
   },
   {
-    pillar: '03',
     name: 'Paper Mill Machines',
     path: '/projects/paper-mill-machines',
     description: 'Design and construction of state-of-the-art machinery for the paper manufacturing industry.',
     imageUrl: PaperMillMachines,
   },
   {
-    pillar: '04',
     name: 'Asbestos Machines',
     path: '/projects/asbestos-machines',
     description: 'Safe and compliant machinery solutions for the handling and processing of asbestos materials.',
@@ -71,9 +70,6 @@ const Projects = () => {
                 
                 {/* Content */}
                 <div className="relative flex flex-col justify-end h-full p-8 text-white z-10">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-1 text-sm font-medium self-start mb-4">
-                    Pillar {project.pillar}
-                  </div>
                   <h2 className="text-4xl font-bold mb-2">{project.name}</h2>
                   
                   {/* Description revealed on hover */}

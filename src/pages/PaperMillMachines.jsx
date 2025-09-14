@@ -4,8 +4,12 @@ import { ChevronRightIcon, CogIcon, ShieldCheckIcon, CpuChipIcon, ArrowLeftIcon,
 
 // --- Import your local images for the slider ---
 import paperMachine1 from '../assets/images/r3.png';
-
-
+import image2 from '../assets/images/r2.png';
+import image3 from '../assets/images/r4.png';
+import image4 from '../assets/images/r5.png';
+import image5 from '../assets/images/r6.png';
+import image6 from '../assets/images/r7.png';
+import image7 from '../assets/images/r8.png';   
 
 // --- Reusable list item component (no changes) ---
 const MachineItem = ({ name }) => (
@@ -37,6 +41,12 @@ const PaperMillMachines = () => {
 
   const galleryImages = [
     { src: paperMachine1, alt: 'State-of-the-art paper mill machine in operation' },
+    { src: image2, alt: 'State-of-the-art paper mill machine in operation' },
+    { src: image3, alt: 'State-of-the-art paper mill machine in operation' },
+    { src: image4, alt: 'State-of-the-art paper mill machine in operation' },
+    { src: image5, alt: 'State-of-the-art paper mill machine in operation' },
+    { src: image6, alt: 'State-of-the-art paper mill machine in operation' },
+    { src: image7, alt: 'State-of-the-art paper mill machine in operation' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -79,7 +89,7 @@ const PaperMillMachines = () => {
         <div className="mb-12">
           <Link to="/projects" className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
             <ArrowLeftIcon className="h-5 w-5 mr-2" />
-            Back to Projects
+            Back
           </Link>
         </div>
 
