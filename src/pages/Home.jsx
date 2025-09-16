@@ -161,7 +161,7 @@ export default function Home() {
         </section>
         
         {/* Final CTA Section */}
-        <section className="bg-brand-orange">
+        <section className="bg-orange-600">
              <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:py-24 lg:px-8 text-center">
                 {/* COLOR CHANGE: Text on orange background is now white for contrast */}
                 <h2 className="text-4xl font-extrabold text-white">

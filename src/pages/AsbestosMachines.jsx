@@ -11,6 +11,8 @@ import image5 from '../assets/images/r6.png';
 import image6 from '../assets/images/r7.png';
 import image7 from '../assets/images/r8.png';
 
+import asbestos from '../assets/images/2d.jpg';
+
 // --- Reusable list item component ---
 const MachineItem = ({ name }) => (
   <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
@@ -69,17 +71,21 @@ const AsbestosMachines = () => {
   return (
     // COLOR CHANGE
     <div className="bg-slate-50">
-      {/* --- Hero Section --- */}
-      <section 
-        className="relative py-28 px-4 bg-cover bg-center text-white flex items-center justify-center"
-        style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1554121048-5232582885a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3')" }}
-      >
-        <div className="text-center z-10">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight uppercase text-shadow-lg">
-            Asbestos Machines
-          </h1>
-        </div>
-      </section>
+  {/* --- Hero Section --- */}
+  <section 
+  className="relative py-28 px-4 bg-cover bg-center flex items-center justify-center"
+  style={{
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${asbestos})`
+  }}
+>
+  {/* Text on top */}
+  <div className="relative z-10 text-center">
+    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight uppercase text-white drop-shadow-lg">
+      Asbestos Machines
+    </h1>
+  </div>
+</section>
+
 
       {/* --- Main Content Section --- */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">

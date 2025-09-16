@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import contact from '../assets/images/contact.jpg';
 
 // --- ICONS (no changes needed) ---
 const LocationMarkerIcon = ({ className }) => (
@@ -48,14 +49,14 @@ export default function Contact() {
       {/* Hero Section */}
       <div className="relative h-96">
         <img
-          src="https://images.unsplash.com/photo-1621976392233-ea636a04fb1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+          src={ contact }
           alt="Modern paper mill machinery"
           className="w-full h-full object-cover"
         />
         {/* COLOR CHANGE: Overlay is now darker for better text contrast */}
         <div className="absolute inset-0 bg-gray-900 bg-opacity-70 flex items-center justify-center">
           <div className="text-center px-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-orange-600 tracking-tight">
               Contact Our Experts
             </h1>
             <p className="mt-4 text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto">

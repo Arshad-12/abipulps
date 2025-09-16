@@ -11,6 +11,9 @@ import image5 from '../assets/images/r6.png';
 import image6 from '../assets/images/r7.png';
 import image7 from '../assets/images/r8.png';
 
+import rubberizing from '../assets/images/2a.jpg';
+
+
 // --- Component for list items ---
 const ListItem = ({ children }) => (
   <li className="flex items-start">
@@ -66,14 +69,17 @@ const RubberizingRollers = () => {
       <section className="relative h-96 bg-text-gray text-white flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40" 
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1594027389473-1323ea11a3d3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
+          style={{ backgroundImage: `url(${rubberizing})` }}
         ></div>
         <div className="relative z-10 text-center px-4">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight uppercase">
             Rubberizing Rollers
           </h1>
           {/* COLOR CHANGE */}
-          <p className="mt-4 text-2xl font-semibold text-brand-orange">For All Industries</p>
+          <p className="mt-4 text-2xl font-semibold text-white bg-orange-600/30 px-4 py-2 inline-block rounded-lg">
+  For All Industries
+</p>
+
         </div>
       </section>
 

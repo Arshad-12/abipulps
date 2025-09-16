@@ -11,6 +11,9 @@ import image5 from '../assets/images/r6.png';
 import image6 from '../assets/images/r7.png';
 import image7 from '../assets/images/r8.png';
 
+import pulpmill from '../assets/images/2b.jpg';
+
+
 // --- Reusable list item component ---
 const EquipmentItem = ({ name }) => (
   // COLOR CHANGE
@@ -61,18 +64,23 @@ const PulpMillEquipments = () => {
     // COLOR CHANGE
     <div className="bg-slate-50">
       {/* --- Hero Section --- */}
-      <section 
-        className="relative py-24 px-4 bg-cover bg-center text-white flex items-center justify-center"
-        style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1624353365286-9a17a3a0595b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
-      >
-        <div className="text-center">
-          {/* COLOR CHANGE */}
-          <p className="text-lg font-semibold text-brand-orange uppercase tracking-wider">State-of-the-Art Solutions</p>
-          <h1 className="mt-2 text-4xl md:text-6xl font-extrabold tracking-tight uppercase">
-            Pulp Mill Equipments
-          </h1>
-        </div>
-      </section>
+      <section
+    className="relative py-24 px-4 bg-cover bg-center text-white flex items-center justify-center"
+    style={{ backgroundImage: `url(${pulpmill})` }}
+  >
+    {/* Black overlay */}
+    <div className="absolute inset-0 bg-black/40"></div>
+
+    {/* Content (z-10 keeps it above overlay) */}
+    <div className="relative z-10 text-center">
+      <h1 className="mt-2 text-4xl md:text-6xl font-extrabold tracking-tight uppercase">
+        Pulp Mill Equipments
+      </h1>
+       <p className="mt-4 text-2xl font-semibold text-white bg-orange-600/30 px-4 py-2 inline-block rounded-lg">
+        State-of-the-Art Solutions
+      </p>
+    </div>
+  </section>
 
       {/* --- Main Content Section --- */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">

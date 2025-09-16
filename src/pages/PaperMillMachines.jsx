@@ -11,6 +11,9 @@ import image5 from '../assets/images/r6.png';
 import image6 from '../assets/images/r7.png';
 import image7 from '../assets/images/r8.png';   
 
+import papermill from '../assets/images/2c.jpg';
+
+
 // --- Reusable list item component (Original Structure) ---
 const MachineItem = ({ name }) => (
   // COLOR CHANGE
@@ -73,18 +76,25 @@ const PaperMillMachines = () => {
     // COLOR CHANGE
     <div className="bg-slate-50">
       {/* --- HERO SECTION --- */}
-      <section 
-        className="relative py-24 px-4 bg-cover bg-center text-white flex items-center justify-center"
-        style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1629818823573-0427b363712c?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
-      >
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight uppercase">
-            Paper Mill Machines
-          </h1>
-          {/* COLOR CHANGE */}
-          <p className="mt-4 text-xl md:text-2xl font-semibold text-brand-orange">Maximising Performance and Efficiency</p>
-        </div>
-      </section>
+=        <section
+          className="relative py-24 px-4 bg-cover bg-center text-white flex items-center justify-center"
+          style={{ backgroundImage: `url(${papermill})` }}
+        >
+          {/* Black overlay */}
+          <div className="absolute inset-0 bg-black/40"></div>
+
+          {/* Text content on top of overlay */}
+          <div className="relative z-10 text-center">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight uppercase">
+              Paper Mill Machines
+            </h1>
+
+            {/* Orange label */}
+            <p className="mt-4 text-2xl font-semibold text-white bg-orange-600/30 px-4 py-2 inline-block rounded-lg">
+              Maximising Performance and Efficiency
+            </p>
+          </div>
+        </section>
 
       {/* --- Main Content Section --- */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">

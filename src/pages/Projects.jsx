@@ -4,6 +4,8 @@ import { ArrowRight } from 'lucide-react';
 import PaperMillMachines from '../assets/images/2a.jpg';
 import PulpMillMachines from '../assets/images/2b.jpg';
 import Rollers from '../assets/images/2c.jpg';
+import Asbestos from '../assets/images/2d.jpg'
+import RubberSheets from '../assets/images/2e.jpg'
 
 
 const projects = [
@@ -29,8 +31,15 @@ const projects = [
     name: 'Asbestos Machines',
     path: '/projects/asbestos-machines',
     description: 'Safe and compliant machinery solutions for the handling and processing of asbestos materials.',
-    imageUrl: 'https://images.unsplash.com/photo-1554121048-5232582885a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+    imageUrl: Asbestos,
   },
+  {
+    name: 'Rubber Sheets',
+    path: '/projects/rubber-sheets',
+    description: 'Production and supply of durable, high-quality rubber sheets engineered for industrial and commercial applications.',
+    imageUrl: RubberSheets,
+    center : true,
+},
 ];
 
 const Projects = () => {
@@ -52,11 +61,12 @@ const Projects = () => {
         {/* 2x2 Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {projects.map((project) => (
-            <Link
-              key={project.name}
-              to={project.path}
-              className="group relative block rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-            >
+             <Link
+    key={project.name}
+    to={project.path}
+    className={`group relative block rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 
+      ${project.center ? "md:col-span-2 md:mx-auto md:w-2/3" : ""}`}
+  >
               <div className="relative min-h-[450px]">
                 {/* Background Image */}
                 <img
@@ -66,7 +76,7 @@ const Projects = () => {
                 />
                 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-transparent"></div>
                 
                 {/* Content */}
                 <div className="relative flex flex-col justify-end h-full p-8 text-white z-10">
