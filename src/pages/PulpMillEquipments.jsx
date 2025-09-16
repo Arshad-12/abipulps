@@ -9,13 +9,13 @@ import image3 from '../assets/images/r4.png';
 import image4 from '../assets/images/r5.png';
 import image5 from '../assets/images/r6.png';
 import image6 from '../assets/images/r7.png';
-import image7 from '../assets/images/r8.png';    // Replace with your actual image file
-// Replace with your actual image file
+import image7 from '../assets/images/r8.png';
 
 // --- Reusable list item component ---
 const EquipmentItem = ({ name }) => (
-  <li className="flex items-center text-gray-700 text-lg">
-    <ChevronRightIcon className="h-5 w-5 text-yellow-500 mr-3 flex-shrink-0" />
+  // COLOR CHANGE
+  <li className="flex items-center text-text-gray-light text-lg">
+    <ChevronRightIcon className="h-5 w-5 text-brand-orange mr-3 flex-shrink-0" />
     <span>{name}</span>
   </li>
 );
@@ -29,7 +29,6 @@ const PulpMillEquipments = () => {
     "Former", "Sludge Press"
   ];
 
-  // --- Array for the new image slider ---
   const galleryImages = [
     { src: pulpMachine1, alt: 'High Consistency Pulper in operation' },
     { src: image2, alt: 'State-of-the-art paper mill machine in operation' },
@@ -40,10 +39,8 @@ const PulpMillEquipments = () => {
     { src: image7, alt: 'State-of-the-art paper mill machine in operation' },
   ];
 
-  // --- State to track the current image index ---
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // --- Functions to handle slider navigation ---
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? galleryImages.length - 1 : currentIndex - 1;
@@ -56,20 +53,21 @@ const PulpMillEquipments = () => {
     setCurrentIndex(newIndex);
   };
 
-  // Split the list for a two-column layout
   const midIndex = Math.ceil(equipmentList.length / 2);
   const firstColumn = equipmentList.slice(0, midIndex);
   const secondColumn = equipmentList.slice(midIndex);
 
   return (
-    <div className="bg-white">
+    // COLOR CHANGE
+    <div className="bg-slate-50">
       {/* --- Hero Section --- */}
       <section 
         className="relative py-24 px-4 bg-cover bg-center text-white flex items-center justify-center"
         style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1624353365286-9a17a3a0595b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
       >
         <div className="text-center">
-          <p className="text-lg font-semibold text-yellow-400 uppercase tracking-wider">State-of-the-Art Solutions</p>
+          {/* COLOR CHANGE */}
+          <p className="text-lg font-semibold text-brand-orange uppercase tracking-wider">State-of-the-Art Solutions</p>
           <h1 className="mt-2 text-4xl md:text-6xl font-extrabold tracking-tight uppercase">
             Pulp Mill Equipments
           </h1>
@@ -81,7 +79,8 @@ const PulpMillEquipments = () => {
 
         {/* --- Back to Projects Link --- */}
         <div className="mb-12">
-          <Link to="/projects" className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+          {/* COLOR CHANGE */}
+          <Link to="/projects" className="inline-flex items-center text-brand-orange font-semibold hover:text-brand-orange-dark transition-colors">
             <ArrowLeftIcon className="h-5 w-5 mr-2" />
             Back
           </Link>
@@ -92,8 +91,9 @@ const PulpMillEquipments = () => {
           {/* --- Left Title --- */}
           <aside className="lg:col-span-2">
             <div className="sticky top-28">
-               <h2 className="text-2xl font-bold text-gray-900 flex items-center">
-                 <span className="w-1.5 h-10 bg-yellow-400 mr-4"></span>
+               {/* COLOR CHANGE */}
+               <h2 className="text-2xl font-bold text-text-gray flex items-center">
+                 <span className="w-1.5 h-10 bg-brand-orange mr-4"></span>
                  EQUIPMENTS FOR PULP INDUSTRY
                </h2>
             </div>
@@ -101,7 +101,8 @@ const PulpMillEquipments = () => {
           
           {/* --- Right Content Area --- */}
           <div className="lg:col-span-3">
-            <div className="prose prose-lg max-w-none text-gray-600 mb-12">
+             {/* COLOR CHANGE */}
+            <div className="prose prose-lg max-w-none text-text-gray-light mb-12">
               <p>
                 Abi pulp and paper industries advanced Pulp mill Equipments maximise the performance of a production line, forming, pressing, drying and finishing section. Our equipments covers are based on state-of-the-art polymer and latest technologies that provide excellent wear resistance, stable roughness & hardness and durability in demanding operating environment enabling trouble-free run period.
               </p>
@@ -142,7 +143,8 @@ const PulpMillEquipments = () => {
       </main>
 
       {/* --- Call to Action Section --- */}
-      <section className="bg-slate-800">
+      {/* COLOR CHANGE */}
+      <section className="bg-text-gray">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between">
           <h2 className="text-3xl font-extrabold text-white text-center sm:text-left">
             <span className="block">INTERESTED WITH THIS SERVICE?</span>
@@ -150,7 +152,8 @@ const PulpMillEquipments = () => {
           <div className="mt-8 sm:mt-0 flex-shrink-0">
             <Link 
               to="/contact"
-              className="w-full inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-gray-900 bg-yellow-400 hover:bg-yellow-500 transition-transform transform hover:scale-105"
+              // COLOR CHANGE
+              className="w-full inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-brand-orange hover:bg-brand-orange-dark transition-transform transform hover:scale-105"
             >
               GET A QUOTE
             </Link>

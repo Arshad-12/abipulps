@@ -42,7 +42,7 @@ const Projects = () => {
         <div className="text-center mb-20 max-w-4xl mx-auto">
           <span className="text-indigo-600 font-semibold uppercase tracking-widest">Core Capabilities</span>
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 leading-tight mt-2 mb-4">
-            Four Pillars of Our Expertise
+            Our Expertise
           </h1>
           <p className="text-lg md:text-xl text-slate-600">
             We specialize in four core areas of industrial engineering, delivering robust and reliable solutions tailored to our clients' operational needs.

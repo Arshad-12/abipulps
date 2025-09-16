@@ -9,15 +9,15 @@ import image3 from '../assets/images/r4.png';
 import image4 from '../assets/images/r5.png';
 import image5 from '../assets/images/r6.png';
 import image6 from '../assets/images/r7.png';
-import image7 from '../assets/images/r8.png';   // Replace with your actual image file
-// Replace with your actual image file
+import image7 from '../assets/images/r8.png';
 
 // --- Reusable list item component ---
 const MachineItem = ({ name }) => (
   <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
     <div className="flex items-center">
-      <ChevronRightIcon className="h-6 w-6 text-yellow-500 mr-4 flex-shrink-0" />
-      <span className="text-xl font-semibold text-gray-800">{name}</span>
+      {/* COLOR CHANGE */}
+      <ChevronRightIcon className="h-6 w-6 text-brand-orange mr-4 flex-shrink-0" />
+      <span className="text-xl font-semibold text-text-gray">{name}</span>
     </div>
   </div>
 );
@@ -25,11 +25,12 @@ const MachineItem = ({ name }) => (
 // --- Reusable feature card component ---
 const FeatureCard = ({ icon, title, children }) => (
     <div className="text-center p-6">
-      <div className="flex items-center justify-center h-16 w-16 rounded-full bg-yellow-400 text-white mx-auto mb-4">
+      {/* COLOR CHANGE */}
+      <div className="flex items-center justify-center h-16 w-16 rounded-full bg-brand-orange text-white mx-auto mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600">{children}</p>
+      <h3 className="text-xl font-bold text-text-gray mb-2">{title}</h3>
+      <p className="text-text-gray-light">{children}</p>
     </div>
   );
 
@@ -41,7 +42,6 @@ const AsbestosMachines = () => {
     "HI-Consistency Pulpersr"
   ];
 
-  // --- Array for the new image slider ---
   const galleryImages = [
     { src: asbestosMachine1, alt: 'Sieve Cylinder with VAT for asbestos processing' },
     { src: image2, alt: 'State-of-the-art paper mill machine in operation' },
@@ -52,10 +52,8 @@ const AsbestosMachines = () => {
     { src: image7, alt: 'State-of-the-art paper mill machine in operation' },
   ];
 
-  // --- State to track the current image index ---
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // --- Functions to handle slider navigation ---
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? galleryImages.length - 1 : currentIndex - 1;
@@ -69,7 +67,8 @@ const AsbestosMachines = () => {
   };
 
   return (
-    <div className="bg-gray-50">
+    // COLOR CHANGE
+    <div className="bg-slate-50">
       {/* --- Hero Section --- */}
       <section 
         className="relative py-28 px-4 bg-cover bg-center text-white flex items-center justify-center"
@@ -87,7 +86,8 @@ const AsbestosMachines = () => {
 
         {/* --- Back to Projects Link --- */}
         <div className="mb-12">
-          <Link to="/projects" className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+          {/* COLOR CHANGE */}
+          <Link to="/projects" className="inline-flex items-center text-brand-orange font-semibold hover:text-brand-orange-dark transition-colors">
             <ArrowLeftIcon className="h-5 w-5 mr-2" />
             Back
           </Link>
@@ -98,8 +98,9 @@ const AsbestosMachines = () => {
           {/* --- Left Title --- */}
           <aside className="lg:col-span-2">
             <div className="sticky top-28">
-               <h2 className="text-2xl font-bold text-gray-900 flex items-center">
-                 <span className="w-1.5 h-10 bg-yellow-400 mr-4"></span>
+               {/* COLOR CHANGE */}
+               <h2 className="text-2xl font-bold text-text-gray flex items-center">
+                 <span className="w-1.5 h-10 bg-brand-orange mr-4"></span>
                  MACHINES FOR ASBESTOS INDUSTRY
                </h2>
             </div>
@@ -107,7 +108,8 @@ const AsbestosMachines = () => {
           
           {/* --- Right Content Area --- */}
           <div className="lg:col-span-3">
-            <div className="prose prose-lg max-w-none text-gray-600 mb-12">
+             {/* COLOR CHANGE */}
+            <div className="prose prose-lg max-w-none text-text-gray-light mb-12">
               <p>
                 Abi Pulp and Paper Industries advanced Asbestos Mill Equipments maximise the performance of a production line, forming, pressing, drying and finishing section. Our equipments covers are based on state-of-the-art polymer and latest technologies that provide excellent wear resistance, stable roughness & hardness and durability in demanding operating environment enabling trouble-free run period.
               </p>
@@ -146,8 +148,9 @@ const AsbestosMachines = () => {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-                <h2 className="text-3xl font-extrabold text-gray-900">Engineered for Demanding Environments</h2>
-                <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Our machinery is built with a focus on safety, precision, and long-term reliability.</p>
+                {/* COLOR CHANGE */}
+                <h2 className="text-3xl font-extrabold text-text-gray">Engineered for Demanding Environments</h2>
+                <p className="mt-4 text-lg text-text-gray-light max-w-2xl mx-auto">Our machinery is built with a focus on safety, precision, and long-term reliability.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <FeatureCard icon={<ShieldCheckIcon className="h-8 w-8"/>} title="Safety & Compliance">
@@ -164,7 +167,8 @@ const AsbestosMachines = () => {
       </section>
 
       {/* --- Call to Action Section --- */}
-      <section className="bg-slate-800">
+      {/* COLOR CHANGE */}
+      <section className="bg-text-gray">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between">
           <h2 className="text-3xl font-extrabold text-white text-center sm:text-left">
             <span className="block">INTERESTED WITH THIS SERVICE?</span>
@@ -172,7 +176,8 @@ const AsbestosMachines = () => {
           <div className="mt-8 sm:mt-0 flex-shrink-0">
             <Link 
               to="/contact"
-              className="w-full inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-gray-900 bg-yellow-400 hover:bg-yellow-500 transition-transform transform hover:scale-105"
+              // COLOR CHANGE
+              className="w-full inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-brand-orange hover:bg-brand-orange-dark transition-transform transform hover:scale-105"
             >
               GET A QUOTE
             </Link>

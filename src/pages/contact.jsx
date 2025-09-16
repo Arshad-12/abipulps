@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-// --- ICONS UPDATED FOR FLEXIBILITY ---
-// The icon components now accept a className prop to easily change color and size.
+// --- ICONS (no changes needed) ---
 const LocationMarkerIcon = ({ className }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -44,7 +43,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-white text-gray-800">
+    // COLOR CHANGE: Default text is now the lighter brand gray
+    <div className="bg-white text-text-gray">
       {/* Hero Section */}
       <div className="relative h-96">
         <img
@@ -52,12 +52,13 @@ export default function Contact() {
           alt="Modern paper mill machinery"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center">
+        {/* COLOR CHANGE: Overlay is now darker for better text contrast */}
+        <div className="absolute inset-0 bg-gray-900 bg-opacity-70 flex items-center justify-center">
           <div className="text-center px-4">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
               Contact Our Experts
             </h1>
-            <p className="mt-4 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="mt-4 text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto">
               We provide cutting-edge solutions for the pulp and paper industry. Let's discuss how we can help you.
             </p>
           </div>
@@ -68,43 +69,46 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Column 1: Contact Form */}
-          <div className="bg-gray-50 p-8 sm:p-12 rounded-2xl shadow-lg">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Request a Consultation</h2>
-            <p className="text-gray-600 mb-8">Fill out the form and our team will be in touch within 24 hours.</p>
+          <div className="bg-slate-50 p-8 sm:p-12 rounded-2xl shadow-lg">
+            {/* COLOR CHANGE: Text updated to new gray colors */}
+            <h2 className="text-3xl font-bold text-text-gray mb-2">Request a Consultation</h2>
+            <p className="text-text-gray-light mb-8">Fill out the form and our team will be in touch within 24 hours.</p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700">Full Name</label>
+                <label htmlFor="fullName" className="block text-sm font-semibold text-text-gray">Full Name</label>
+                {/* COLOR CHANGE: Form focus ring updated to brand orange */}
                 <input
                   type="text" name="fullName" id="fullName" value={formData.fullName} onChange={handleChange}
-                  className="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 transition"
+                  className="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-orange focus:border-brand-orange transition"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700">Email Address</label>
+                <label htmlFor="email" className="block text-sm font-semibold text-text-gray">Email Address</label>
                 <input
                   type="email" name="email" id="email" value={formData.email} onChange={handleChange}
-                  className="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 transition"
+                  className="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-orange focus:border-brand-orange transition"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="company" className="block text-sm font-semibold text-gray-700">Company</label>
+                <label htmlFor="company" className="block text-sm font-semibold text-text-gray">Company</label>
                 <input
                   type="text" name="company" id="company" value={formData.company} onChange={handleChange}
-                  className="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 transition"
+                  className="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-orange focus:border-brand-orange transition"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700">How can we help?</label>
+                <label htmlFor="message" className="block text-sm font-semibold text-text-gray">How can we help?</label>
                 <textarea
                   name="message" id="message" rows="5" value={formData.message} onChange={handleChange}
-                  className="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 transition"
+                  className="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-orange focus:border-brand-orange transition"
                   required
                 ></textarea>
               </div>
               <div>
-                <button type="submit" className="w-full text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-300 font-bold rounded-lg text-base px-6 py-3.5 text-center transition-transform transform hover:scale-105">
+                {/* COLOR CHANGE: Button updated to brand orange */}
+                <button type="submit" className="w-full text-white bg-brand-orange hover:bg-brand-orange-dark focus:ring-4 focus:ring-brand-orange/50 font-bold rounded-lg text-base px-6 py-3.5 text-center transition-transform transform hover:scale-105">
                   Send Inquiry
                 </button>
               </div>
@@ -112,39 +116,42 @@ export default function Contact() {
           </div>
 
           {/* Direct Contact Section */}
-          <div className="bg-gray-900 rounded-2xl shadow-lg p-8 sm:p-12 flex flex-col justify-center">
+          {/* COLOR CHANGE: Background is now the new dark gray */}
+          <div className="bg-text-gray rounded-2xl shadow-lg p-8 sm:p-12 flex flex-col justify-center">
             <h3 className="text-3xl font-bold text-white">Direct Contact</h3>
             <p className="mt-3 text-gray-300">
               Prefer to reach out directly? We're here to help. Contact us via phone, email, or visit our office during business hours.
             </p>
             <div className="mt-10 space-y-8">
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 bg-amber-500 p-3 rounded-lg">
+                {/* COLOR CHANGE: Icon background is now brand orange */}
+                <div className="flex-shrink-0 bg-brand-orange p-3 rounded-lg">
                   <PhoneIcon className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <p className="text-xl font-semibold text-white">Phone</p>
-                  <a href="tel:+919600942102" className="text-lg text-gray-300 hover:text-amber-400 transition-colors">
+                  {/* COLOR CHANGE: Hover color is now brand orange */}
+                  <a href="tel:+919600942102" className="text-lg text-gray-300 hover:text-brand-orange transition-colors">
                     (+91) 96009 42102 <br/>
                   </a>
-                   <a href="tel:+919345022800" className="text-lg text-gray-300 hover:text-amber-400 transition-colors">
+                   <a href="tel:+919345022800" className="text-lg text-gray-300 hover:text-brand-orange transition-colors">
                     (+91) 93450 22800
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 bg-amber-500 p-3 rounded-lg">
+                <div className="flex-shrink-0 bg-brand-orange p-3 rounded-lg">
                   <MailIcon className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <p className="text-xl font-semibold text-white">Email</p>
-                  <a href="mailto:sales@abipulps.com" className="text-lg text-gray-300 hover:text-amber-400 transition-colors">
+                  <a href="mailto:sales@abipulps.com" className="text-lg text-gray-300 hover:text-brand-orange transition-colors">
                     sales@abipulps.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 bg-amber-500 p-3 rounded-lg">
+                <div className="flex-shrink-0 bg-brand-orange p-3 rounded-lg">
                   <LocationMarkerIcon className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -159,11 +166,12 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Section 2: Large Map -- THIS SECTION IS NOW UPDATED */}
+      {/* Section 2: Large Map */}
       <div className="max-w-7xl mx-auto pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-gray-900">Visit Our Headquarters</h2>
-          <p className="mt-3 max-w-2xl mx-auto text-lg text-gray-600">We are located in the heart of the industrial district, ready to serve our clients.</p>
+           {/* COLOR CHANGE: Text updated to new gray colors */}
+          <h2 className="text-4xl font-extrabold text-text-gray">Visit Our Headquarters</h2>
+          <p className="mt-3 max-w-2xl mx-auto text-lg text-text-gray-light">We are located in the heart of the industrial district, ready to serve our clients.</p>
         </div>
         <div className="h-96 sm:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
           <iframe

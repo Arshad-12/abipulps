@@ -9,13 +9,13 @@ import image3 from '../assets/images/r4.png';
 import image4 from '../assets/images/r5.png';
 import image5 from '../assets/images/r6.png';
 import image6 from '../assets/images/r7.png';
-import image7 from '../assets/images/r8.png';    // Replace with your actual image file
-
+import image7 from '../assets/images/r8.png';
 
 // --- Component for list items ---
 const ListItem = ({ children }) => (
   <li className="flex items-start">
-    <ChevronRightIcon className="h-5 w-5 text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+    {/* COLOR CHANGE */}
+    <ChevronRightIcon className="h-5 w-5 text-brand-orange mr-2 mt-1 flex-shrink-0" />
     <span>{children}</span>
   </li>
 );
@@ -35,7 +35,6 @@ const RubberizingRollers = () => {
     "REELING AND WINDING": ["Reel spool roll (Tambour roll)", "Reel drum hard & soft roll."]
   };
 
-  // --- Array for the new image slider ---
   const galleryImages = [
     { src: rollerImage1, alt: 'High-performance rubberized rollers' },
     { src: image2, alt: 'State-of-the-art paper mill machine in operation' },
@@ -46,10 +45,8 @@ const RubberizingRollers = () => {
     { src: image7, alt: 'State-of-the-art paper mill machine in operation' },
   ];
 
-  // --- State to track the current image index ---
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // --- Functions to handle slider navigation ---
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? galleryImages.length - 1 : currentIndex - 1;
@@ -63,9 +60,10 @@ const RubberizingRollers = () => {
   };
 
   return (
+    // COLOR CHANGE
     <div className="bg-white">
       {/* --- Hero Section --- */}
-      <section className="relative h-96 bg-gray-800 text-white flex items-center justify-center">
+      <section className="relative h-96 bg-text-gray text-white flex items-center justify-center">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-40" 
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1594027389473-1323ea11a3d3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
@@ -74,7 +72,8 @@ const RubberizingRollers = () => {
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight uppercase">
             Rubberizing Rollers
           </h1>
-          <p className="mt-4 text-2xl font-semibold text-yellow-400">For All Industries</p>
+          {/* COLOR CHANGE */}
+          <p className="mt-4 text-2xl font-semibold text-brand-orange">For All Industries</p>
         </div>
       </section>
 
@@ -83,7 +82,8 @@ const RubberizingRollers = () => {
 
         {/* --- Back to Projects Link --- */}
         <div className="mb-12">
-          <Link to="/projects" className="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+          {/* COLOR CHANGE */}
+          <Link to="/projects" className="inline-flex items-center text-brand-orange font-semibold hover:text-brand-orange-dark transition-colors">
             <ArrowLeftIcon className="h-5 w-5 mr-2" />
             Back
           </Link>
@@ -93,9 +93,10 @@ const RubberizingRollers = () => {
           
           {/* --- Left Sidebar --- */}
           <aside className="lg:col-span-1">
-            <div className="sticky top-28 bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="font-bold text-lg text-gray-800 border-b-2 border-yellow-400 pb-2 mb-4">WE ARE RUBBERIZING THE ROLLERS FOR THE FOLLOWING INDUSTRIES</h3>
-              <ul className="space-y-2">
+            {/* COLOR CHANGE */}
+            <div className="sticky top-28 bg-slate-50 p-6 rounded-lg shadow-md">
+              <h3 className="font-bold text-lg text-text-gray border-b-2 border-brand-orange pb-2 mb-4">WE ARE RUBBERIZING THE ROLLERS FOR THE FOLLOWING INDUSTRIES</h3>
+              <ul className="space-y-2 text-text-gray-light">
                 {industries.map((industry, index) => (
                   <li 
                     key={index} 
@@ -110,8 +111,9 @@ const RubberizingRollers = () => {
           
           {/* --- Right Content Area --- */}
           <div className="lg:col-span-2">
-            <div className="prose prose-lg max-w-none text-gray-600">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Advanced Rubber Material Technology</h2>
+            {/* COLOR CHANGE */}
+            <div className="prose prose-lg max-w-none text-text-gray-light">
+              <h2 className="text-3xl font-bold text-text-gray mb-4">Advanced Rubber Material Technology</h2>
               <p>
                 Abi pulp and paper industries advanced rubber material technology lets maximize the performance of a production line, forming, pressing, drying and finishing section. Our roll covers are based on state-of-the-art polymer and latest technologies that provide excellent wear resistance, stable roughness & hardness and durability in demanding operating environment enabling trouble-free roll run period.
               </p>
@@ -139,10 +141,11 @@ const RubberizingRollers = () => {
             </div>
 
             {/* --- Detailed Sections Grid --- */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mt-12 text-gray-700">
+            {/* COLOR CHANGE */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mt-12 text-text-gray-light">
               {Object.entries(sections).map(([title, items]) => (
                 <div key={title}>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">{title}</h4>
+                  <h4 className="text-xl font-bold text-text-gray mb-4">{title}</h4>
                   <ul className="space-y-2">
                     {items.map((item, index) => (
                       <ListItem key={index}>{item}</ListItem>
@@ -156,23 +159,26 @@ const RubberizingRollers = () => {
       </main>
 
       {/* --- Highlight Section --- */}
-      <section className="bg-gray-50 py-12">
+      <section className="bg-slate-50 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-3xl font-extrabold text-yellow-500 tracking-wide uppercase">
+          {/* COLOR CHANGE */}
+          <h3 className="text-3xl font-extrabold text-brand-orange tracking-wide uppercase">
             Rubberizing & Re-Rubberizing will be done for all types of rolls
           </h3>
         </div>
       </section>
 
       {/* --- Call to Action Section --- */}
-      <section className="bg-slate-800">
+      {/* COLOR CHANGE */}
+      <section className="bg-text-gray">
         <div className="max-w-4xl mx-auto text-center py-16 px-4 sm:px-6 sm:py-20 lg:px-8">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
             <span className="block">Interested in our Products and Services?</span>
           </h2>
           <Link 
             to="/contact"
-            className="mt-8 w-full inline-flex items-center justify-center px-6 py-4 border border-transparent rounded-md shadow-sm text-base font-bold text-gray-900 bg-yellow-400 hover:bg-yellow-500 transition-transform transform hover:scale-105 sm:w-auto"
+            // COLOR CHANGE
+            className="mt-8 w-full inline-flex items-center justify-center px-6 py-4 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-brand-orange hover:bg-brand-orange-dark transition-transform transform hover:scale-105 sm:w-auto"
           >
             Get a Quote
           </Link>
