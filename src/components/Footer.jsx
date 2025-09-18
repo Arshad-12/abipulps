@@ -7,6 +7,19 @@ export default function Footer() {
         <p className="text-base text-gray-400">
           &copy; 2025 Abi Pulps & Paper Equipments. All Rights Reserved.
         </p>
+        
+        {/* --- Watermark Line Added Below --- */}
+        <p className="mt-4 text-sm text-gray-500">
+          Designed & Developed by 
+          <a 
+            href="https://your-website.com" // <-- IMPORTANT: Change this link
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-yellow-400 transition-colors duration-300"
+          >
+            {' '}Strategic knights {/* <-- IMPORTANT: Change this text */}
+          </a>
+        </p>
       </div>
     </footer>
   );

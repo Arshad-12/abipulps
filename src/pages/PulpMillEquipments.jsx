@@ -3,13 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRightIcon, ArrowLeftIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 
 // --- Import your local images for the slider ---
-import pulpMachine1 from '../assets/images/r3.png';
-import image2 from '../assets/images/r2.png';
-import image3 from '../assets/images/r4.png';
-import image4 from '../assets/images/r5.png';
-import image5 from '../assets/images/r6.png';
-import image6 from '../assets/images/r7.png';
-import image7 from '../assets/images/r8.png';
+import pulpMachine1 from '../assets/images/r3.jpg';
 
 import pulpmill from '../assets/images/2b.jpg';
 
@@ -34,12 +28,6 @@ const PulpMillEquipments = () => {
 
   const galleryImages = [
     { src: pulpMachine1, alt: 'High Consistency Pulper in operation' },
-    { src: image2, alt: 'State-of-the-art paper mill machine in operation' },
-    { src: image3, alt: 'State-of-the-art paper mill machine in operation' },
-    { src: image4, alt: 'State-of-the-art paper mill machine in operation' },
-    { src: image5, alt: 'State-of-the-art paper mill machine in operation' },
-    { src: image6, alt: 'State-of-the-art paper mill machine in operation' },
-    { src: image7, alt: 'State-of-the-art paper mill machine in operation' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

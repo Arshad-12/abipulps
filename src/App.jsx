@@ -10,6 +10,7 @@ import RubberizingRollers from './pages/RubberizingRollers';
 import PulpMillEquipments from './pages/PulpMillEquipments';
 import PaperMillMachines from './pages/PaperMillMachines';
 import AsbestosMachines from './pages/AsbestosMachines';
+import RubberSheets from './pages/RubberSheets';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/projects/pulp-mill-equipments" element={<PulpMillEquipments />} />
             <Route path="/projects/paper-mill-machines" element={<PaperMillMachines />} />
             <Route path="/projects/asbestos-machines" element={<AsbestosMachines />} />
+            <Route path="/projects/rubber-sheets" element={<RubberSheets />} />
           </Routes>
         </main>
         <Footer />

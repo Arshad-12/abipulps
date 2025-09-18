@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/images/Logo.png';
+import logo from '../assets/images/Logo1.png';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +20,6 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
               <img src={logo} className="h-10" alt="Abi Pulps & Paper Logo" />
-              <span className="self-center text-2xl font-bold text-slate-gray tracking-tight whitespace-nowrap">
-                Abi Pulps & Paper
-              </span>
             </NavLink>
           </div>
 
